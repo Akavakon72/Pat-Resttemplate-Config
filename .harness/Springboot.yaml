@@ -54,7 +54,7 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: <+input>
-                    repo: "*/*"
+                    repo: <+input>
                     tags:
                       - latest
                     buildArgs:
