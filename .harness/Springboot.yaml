@@ -48,3 +48,12 @@ pipeline:
                     command: |-
                       set +e
                       mvn clean install
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: <+input>
+                    repo: <+input>
+                    tags:
+                      - latest
