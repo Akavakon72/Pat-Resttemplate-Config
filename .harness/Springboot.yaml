@@ -54,7 +54,7 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: <+input>
-                    repo: <+input>
+                    repo: harnessImage/Pat-Resttemplate-Config
                     tags:
                       - latest
                     buildArgs:
