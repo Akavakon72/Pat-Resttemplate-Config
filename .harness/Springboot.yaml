@@ -1,0 +1,50 @@
+pipeline:
+  name: Springboot
+  identifier: Springboot
+  projectIdentifier: Sampleproject
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1699264997537
+        repoName: Akavakon72/Pat-Resttemplate-Config
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Unit Test
+                  identifier: Unit_Test
+                  spec:
+                    connectorRef: <+input>
+                    image: maven
+                    shell: Sh
+                    command: |
+                      set +e
+                      mvn test
+              - step:
+                  type: Run
+                  name: Build
+                  identifier: Build
+                  spec:
+                    connectorRef: <+input>
+                    image: maven
+                    shell: Sh
+                    command: |-
+                      set +e
+                      mvn clean install
