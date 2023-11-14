@@ -48,14 +48,3 @@ pipeline:
                     command: |-
                       set +e
                       mvn clean install
-              - step:
-                  type: BuildAndPushDockerRegistry
-                  name: BuildAndPushDockerRegistry_1
-                  identifier: BuildAndPushDockerRegistry_1
-                  spec:
-                    connectorRef: <+input>
-                    repo: harnessImage/pat-resttemplate-config
-                    tags:
-                      - harnessImage/pat-resttemplate-config:latest
-                    buildArgs:
-                      tag: Pat-Resttemplate-Config
