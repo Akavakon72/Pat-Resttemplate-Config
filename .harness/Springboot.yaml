@@ -56,6 +56,6 @@ pipeline:
                     connectorRef: <+input>
                     repo: harnessImage/pat-resttemplate-config
                     tags:
-                      - latest
+                      - harnessImage/pat-resttemplate-config:latest
                     buildArgs:
                       tag: Pat-Resttemplate-Config
