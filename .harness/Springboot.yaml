@@ -48,3 +48,12 @@ pipeline:
                     command: |-
                       set +e
                       mvn clean install
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: Build push image
+                  identifier: Build_push_image
+                  spec:
+                    connectorRef: account.harnessImage
+                    repo: harnessImage
+                    tags:
+                      - springboot:latest
