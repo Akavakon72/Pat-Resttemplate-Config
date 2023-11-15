@@ -53,7 +53,7 @@ pipeline:
                   name: Build push image
                   identifier: Build_push_image
                   spec:
-                    connectorRef: account.harnessImage
+                    connectorRef: dockerconnectorpersonal
                     repo: akavakon72/sprigboot-pat
                     tags:
                       - latest
