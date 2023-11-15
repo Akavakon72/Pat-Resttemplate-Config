@@ -54,7 +54,6 @@ pipeline:
                   identifier: Build_push_image
                   spec:
                     connectorRef: account.harnessImage
-                    imageName: test-image
-                    repo: "*"
+                    repo: akavakon72/sprigboot-pat
                     tags:
-                      - "*"
+                      - latest
