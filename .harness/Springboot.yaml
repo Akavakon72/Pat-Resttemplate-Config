@@ -54,6 +54,6 @@ pipeline:
                   identifier: Build_push_image
                   spec:
                     connectorRef: account.harnessImage
-                    repo: harnessImage
+                    repo: "*"
                     tags:
-                      - springboot:latest
+                      - "*"
